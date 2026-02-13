@@ -1,32 +1,38 @@
 openapi: 3.0.4
 info:
   title: BIMI Record Validator
-  description: BIMI Validator checks if a domain has a valid BIMI record published in DNS. BIMI enables domain owners to display verified logos in supported email clients.
+  description: >-
+    BIMI Validator checks if a domain has a valid BIMI record published in DNS.
+    BIMI enables domain owners to display verified logos in supported email
+    clients.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/bimivalidator:
     get:
       summary: Validate BIMI Record
-      description: BIMI Validator checks if a domain has a valid BIMI record published in DNS. BIMI enables domain owners to display verified logos in supported email clients.
+      description: >-
+        BIMI Validator checks if a domain has a valid BIMI record published in
+        DNS. BIMI enables domain owners to display verified logos in supported
+        email clients.
       operationId: bimivalidator
       parameters:
-      - name: domain
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The domain to validate the BIMI record for
-        example: ebay.com
+        - name: domain
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The domain to validate the BIMI record for
+          example: ebay.com
       responses:
         '200':
           description: Successful Response
@@ -42,34 +48,38 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  bimi_host: default._bimi.ebay.com
-                  bimi_record: v=BIMI1;l=https://bimi.entrust.net/ebay.com/logo.svg;a=https://bimi.entrust.net/ebay.com/certchain.pem
-                  bimi_records_count: 1
-                  has_bimi_record: true
                   host: ebay.com
-                  svg_logo:
-                    file_size_bytes: 1633
-                    status_code: 200
-                    url: https://bimi.entrust.net/ebay.com/logo.svg
-                    valid: true
-                  valid: true
+                  bimi_host: default._bimi.ebay.com
+                  has_bimi_record: true
+                  bimi_record: >-
+                    v=BIMI1;l=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg;a=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem
+                  bimi_records_count: 1
                   version: BIMI1
-                  vmc_certificate:
+                  svg_logo:
+                    url: >-
+                      https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg
                     status_code: 200
-                    url: https://bimi.entrust.net/ebay.com/certchain.pem
                     valid: true
+                    file_size_bytes: 1518
+                  vmc_certificate:
+                    url: >-
+                      https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem
+                    status_code: 200
+                    valid: true
+                  issues_found: []
+                  valid: true
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -77,4 +87,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
