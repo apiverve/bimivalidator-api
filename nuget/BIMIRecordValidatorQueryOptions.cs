@@ -12,7 +12,6 @@ namespace APIVerve.API.BIMIRecordValidator
     {
         /// <summary>
         /// The domain to validate the BIMI record for
-        /// Example: ebay.com
         /// </summary>
         [JsonProperty("domain")]
         public string Domain { get; set; }
