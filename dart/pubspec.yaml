@@ -1,0 +1,16 @@
+name: apiverve_bimivalidator
+description: BIMI Validator checks if a domain has a valid BIMI record published in DNS. BIMI enables domain owners to display verified logos in supported email clients.
+version: 1.1.13
+homepage: https://apiverve.com/marketplace/bimivalidator?utm_source=dart&utm_medium=homepage
+repository: https://github.com/apiverve/bimivalidator-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
