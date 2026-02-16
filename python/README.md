@@ -233,8 +233,9 @@ from apiverve_bimirecordvalidator.apiClient import BimivalidatorAPIClient
 
 api = BimivalidatorAPIClient("[YOUR_API_KEY]")
 
+query = { "domain": "ebay.com" }
+
 try:
-    query = { "domain": "ebay.com" }
     result = api.execute(query)
     print(result)
 finally:
