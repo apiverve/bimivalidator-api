@@ -4,31 +4,44 @@ declare module '@apiverve/bimivalidator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface bimivalidatorResponse {
     status: string;
     error: string | null;
     data: BIMIRecordValidatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface BIMIRecordValidatorData {
-      bimiHost:         string;
-      bimiRecord:       string;
-      bimiRecordsCount: number;
-      hasBimiRecord:    boolean;
-      host:             string;
+      host:             null | string;
+      bimiHost:         null | string;
+      hasBimiRecord:    boolean | null;
+      bimiRecord:       null | string;
+      bimiRecordsCount: number | null;
+      version:          null | string;
       svgLogo:          SVGLogo;
-      valid:            boolean;
-      version:          string;
       vmcCertificate:   SVGLogo;
+      issuesFound:      any[];
+      valid:            boolean | null;
   }
   
   interface SVGLogo {
-      fileSizeBytes?: number;
-      statusCode:     number;
-      url:            string;
-      valid:          boolean;
+      url:            null | string;
+      statusCode:     number | null;
+      valid:          boolean | null;
+      fileSizeBytes?: number | null;
   }
 
   export default class bimivalidatorWrapper {
