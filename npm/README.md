@@ -122,24 +122,25 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "bimi_host": "default._bimi.ebay.com",
-    "bimi_record": "v=BIMI1;l=https://bimi.entrust.net/ebay.com/logo.svg;a=https://bimi.entrust.net/ebay.com/certchain.pem",
-    "bimi_records_count": 1,
-    "has_bimi_record": true,
     "host": "ebay.com",
+    "bimi_host": "default._bimi.ebay.com",
+    "has_bimi_record": true,
+    "bimi_record": "v=BIMI1;l=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg;a=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem",
+    "bimi_records_count": 1,
+    "version": "BIMI1",
     "svg_logo": {
-      "file_size_bytes": 1633,
+      "url": "https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg",
       "status_code": 200,
-      "url": "https://bimi.entrust.net/ebay.com/logo.svg",
+      "valid": true,
+      "file_size_bytes": 1518
+    },
+    "vmc_certificate": {
+      "url": "https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem",
+      "status_code": 200,
       "valid": true
     },
-    "valid": true,
-    "version": "BIMI1",
-    "vmc_certificate": {
-      "status_code": 200,
-      "url": "https://bimi.entrust.net/ebay.com/certchain.pem",
-      "valid": true
-    }
+    "issues_found": [],
+    "valid": true
   }
 }
 ```
