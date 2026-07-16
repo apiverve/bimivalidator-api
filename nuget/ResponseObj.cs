@@ -25,50 +25,68 @@ namespace APIVerve.API.BIMIRecordValidator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
+        [JsonProperty("host")]
+        public string Host { get; set; }
+
         [JsonProperty("bimi_host")]
         public string BimiHost { get; set; }
+
+        [JsonProperty("has_bimi_record")]
+        public bool? HasBimiRecord { get; set; }
 
         [JsonProperty("bimi_record")]
         public string BimiRecord { get; set; }
 
         [JsonProperty("bimi_records_count")]
-        public long BimiRecordsCount { get; set; }
-
-        [JsonProperty("has_bimi_record")]
-        public bool HasBimiRecord { get; set; }
-
-        [JsonProperty("host")]
-        public string Host { get; set; }
-
-        [JsonProperty("svg_logo")]
-        public SvgLogo SvgLogo { get; set; }
-
-        [JsonProperty("valid")]
-        public bool Valid { get; set; }
+        public long? BimiRecordsCount { get; set; }
 
         [JsonProperty("version")]
         public string Version { get; set; }
 
+        [JsonProperty("svg_logo")]
+        public SvgLogo SvgLogo { get; set; }
+
         [JsonProperty("vmc_certificate")]
         public SvgLogo VmcCertificate { get; set; }
+
+        [JsonProperty("issues_found")]
+        public object[] IssuesFound { get; set; }
+
+        [JsonProperty("valid")]
+        public bool? Valid { get; set; }
     }
 
     public partial class SvgLogo
     {
-        [JsonProperty("file_size_bytes", NullValueHandling = NullValueHandling.Ignore)]
-        public long? FileSizeBytes { get; set; }
-
-        [JsonProperty("status_code")]
-        public long StatusCode { get; set; }
-
         [JsonProperty("url")]
         public Uri Url { get; set; }
 
+        [JsonProperty("status_code")]
+        public long? StatusCode { get; set; }
+
         [JsonProperty("valid")]
-        public bool Valid { get; set; }
+        public bool? Valid { get; set; }
+
+        [JsonProperty("file_size_bytes")]
+        public long? FileSizeBytes { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
