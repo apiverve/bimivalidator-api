@@ -191,11 +191,46 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the BIMI Record Validator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "host": "ebay.com",
+    "bimi_host": "default._bimi.ebay.com",
+    "has_bimi_record": true,
+    "bimi_record": "v=BIMI1;l=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg;a=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem",
+    "bimi_records_count": 1,
+    "version": "BIMI1",
+    "svg_logo": {
+      "url": "https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg",
+      "status_code": 200,
+      "valid": true,
+      "file_size_bytes": 1518
+    },
+    "vmc_certificate": {
+      "url": "https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem",
+      "status_code": 200,
+      "valid": true
+    },
+    "issues_found": [],
+    "valid": true
+  }
 }
 ```
 
