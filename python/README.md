@@ -3,11 +3,10 @@ BIMI Record Validator API
 
 BIMI Validator checks if a domain has a valid BIMI record published in DNS. BIMI enables domain owners to display verified logos in supported email clients.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [BIMI Record Validator API](https://apiverve.com/marketplace/bimivalidator?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-bimirecordvalidator.svg)](https://pypi.org/project/apiverve-bimirecordvalidator/)
+
+This is a Python wrapper for the [BIMI Record Validator API](https://apiverve.com/marketplace/bimivalidator?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-bimirecordvalidator
 
 ## Configuration
 
-Before using the bimivalidator API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the BIMI Record Validator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The BIMI Record Validator API documentation is found here: [https://docs.apiverve.com/ref/bimivalidator](https://docs.apiverve.com/ref/bimivalidator?utm_source=pypi&utm_medium=readme).
+The BIMI Record Validator API documentation is found here: [https://docs.apiverve.com/ref/bimivalidator](https://docs.apiverve.com/ref/bimivalidator?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -102,24 +101,25 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "bimi_host": "default._bimi.ebay.com",
-    "bimi_record": "v=BIMI1;l=https://bimi.entrust.net/ebay.com/logo.svg;a=https://bimi.entrust.net/ebay.com/certchain.pem",
-    "bimi_records_count": 1,
-    "has_bimi_record": true,
     "host": "ebay.com",
+    "bimi_host": "default._bimi.ebay.com",
+    "has_bimi_record": true,
+    "bimi_record": "v=BIMI1;l=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg;a=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem",
+    "bimi_records_count": 1,
+    "version": "BIMI1",
     "svg_logo": {
-      "file_size_bytes": 1633,
+      "url": "https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg",
       "status_code": 200,
-      "url": "https://bimi.entrust.net/ebay.com/logo.svg",
+      "valid": true,
+      "file_size_bytes": 1518
+    },
+    "vmc_certificate": {
+      "url": "https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem",
+      "status_code": 200,
       "valid": true
     },
-    "valid": true,
-    "version": "BIMI1",
-    "vmc_certificate": {
-      "status_code": 200,
-      "url": "https://bimi.entrust.net/ebay.com/certchain.pem",
-      "valid": true
-    }
+    "issues_found": [],
+    "valid": true
   }
 }
 ```
@@ -247,7 +247,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -258,12 +258,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
