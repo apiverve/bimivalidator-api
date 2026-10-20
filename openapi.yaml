@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/bimivalidator:
     get:
-      summary: Validate BIMI Record
+      summary: BIMI Record Validator
       description: >-
         BIMI Validator checks if a domain has a valid BIMI record published in
         DNS. BIMI enables domain owners to display verified logos in supported
@@ -57,19 +57,16 @@ paths:
                   host: ebay.com
                   bimi_host: default._bimi.ebay.com
                   has_bimi_record: true
-                  bimi_record: >-
-                    v=BIMI1;l=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg;a=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem
+                  bimi_record: v=BIMI1;l=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg;a=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem
                   bimi_records_count: 1
                   version: BIMI1
                   svg_logo:
-                    url: >-
-                      https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg
+                    url: https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg
                     status_code: 200
                     valid: true
                     file_size_bytes: 1518
                   vmc_certificate:
-                    url: >-
-                      https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem
+                    url: https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem
                     status_code: 200
                     valid: true
                   issues_found: []
