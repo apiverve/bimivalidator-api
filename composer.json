@@ -1,7 +1,7 @@
 {
     "name": "apiverve/bimivalidator",
     "description": "BIMI Validator checks if a domain has a valid BIMI record published in DNS. BIMI enables domain owners to display verified logos in supported email clients.",
-    "version": "1.2.0",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -21,7 +21,7 @@
         "bimi record",
         "brand indicators"
     ],
-    "homepage": "https://apiverve.com/marketplace/bimivalidator?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/bimivalidator?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/bimivalidator",
