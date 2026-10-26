@@ -46,10 +46,10 @@ final _formatPatterns = {
 
 /// BIMI Record Validator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/bimivalidator?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/bimivalidator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [domain] (required) - The domain to validate the BIMI record for
+/// * [domain] (required) - The domain to validate the BIMI record for [format: domain]
 class BimivalidatorClient {
   final String apiKey;
   final String baseUrl;
@@ -57,7 +57,7 @@ class BimivalidatorClient {
 
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
-    'domain': ValidationRule(type: 'string', required: true),
+    'domain': ValidationRule(type: 'string', required: true, format: 'domain'),
   };
 
   BimivalidatorClient(this.apiKey, {

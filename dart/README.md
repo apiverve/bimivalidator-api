@@ -5,7 +5,7 @@ BIMI Validator checks if a domain has a valid BIMI record published in DNS. BIMI
 [![pub package](https://img.shields.io/pub/v/apiverve_bimivalidator.svg)](https://pub.dev/packages/apiverve_bimivalidator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [BIMI Record Validator API](https://apiverve.com/marketplace/bimivalidator?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [BIMI Record Validator API](https://apiverve.com/marketplace/bimivalidator?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_bimivalidator: ^1.1.14
+  apiverve_bimivalidator: ^1.2.3
 ```
 
 Then run:
@@ -52,36 +52,37 @@ void main() async {
   "status": "ok",
   "error": null,
   "data": {
-    "bimi_host": "default._bimi.ebay.com",
-    "bimi_record": "v=BIMI1;l=https://bimi.entrust.net/ebay.com/logo.svg;a=https://bimi.entrust.net/ebay.com/certchain.pem",
-    "bimi_records_count": 1,
-    "has_bimi_record": true,
     "host": "ebay.com",
+    "bimi_host": "default._bimi.ebay.com",
+    "has_bimi_record": true,
+    "bimi_record": "v=BIMI1;l=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg;a=https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem",
+    "bimi_records_count": 1,
+    "version": "BIMI1",
     "svg_logo": {
-      "file_size_bytes": 1633,
+      "url": "https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.svg",
       "status_code": 200,
-      "url": "https://bimi.entrust.net/ebay.com/logo.svg",
+      "valid": true,
+      "file_size_bytes": 1518
+    },
+    "vmc_certificate": {
+      "url": "https://vmc.digicert.com/2b7216dc-27d2-4fbd-8472-f68790117238.pem",
+      "status_code": 200,
       "valid": true
     },
-    "valid": true,
-    "version": "BIMI1",
-    "vmc_certificate": {
-      "status_code": 200,
-      "url": "https://bimi.entrust.net/ebay.com/certchain.pem",
-      "valid": true
-    }
+    "issues_found": [],
+    "valid": true
   }
 }
 ```
 
 ## API Reference
 
-- **API Home:** [BIMI Record Validator API](https://apiverve.com/marketplace/bimivalidator?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/bimivalidator](https://docs.apiverve.com/ref/bimivalidator?utm_source=dart&utm_medium=readme)
+- **API Home:** [BIMI Record Validator API](https://apiverve.com/marketplace/bimivalidator?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/bimivalidator](https://docs.apiverve.com/ref/bimivalidator?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -89,4 +90,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)
